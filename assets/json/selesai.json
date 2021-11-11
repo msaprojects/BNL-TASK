@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "id": "1",
+      "user": "Juned",
+      "keterangan": "It is a long established fact that a reader",
+      "tanggal": "2021-12-12"
+    },
+    {
+      "id": "2",
+      "user": "Cyntia",
+      "keterangan": "Lorem Ipsum is simply dummy text",
+      "tanggal": "2021-12-12"
+    },
+    {
+      "id": "3",
+      "user": "Jack",
+      "keterangan": "Taken kontrak perpanjangan",
+      "tanggal": "2021-12-12"
+    }
+  ]
+}

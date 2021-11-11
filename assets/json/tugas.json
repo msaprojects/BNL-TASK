@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "id": "1",
+      "tanggal": "2020-05-21",
+      "keterangan": "Deadline untuk peresmian",
+      "due_date": "2021-12-12",
+      "kategori": "Resmi"
+    },
+    {
+      "id": "2",
+      "tanggal": "2021-12-21",
+      "keterangan": "Deadline untuk peresmian jalan tol",
+      "due_date": "2021-12-11",
+      "kategori": "Warning"
+    },
+    {
+      "id": "3",
+      "tanggal": "2021-11-19",
+      "keterangan": "Deadline untuk peresmian proyek pertamina",
+      "due_date": "2021-12-10",
+      "kategori": "Deadline"
+    }
+  ]
+}
