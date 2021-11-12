@@ -41,9 +41,17 @@ class _SplashScreenPageState extends State<SplashScreenPage> {
               SizedBox(
                 height: 10,
               ),
-              Text(
-                'BNL REQUEST MANAGEMENT SYSTEM',
-                style: GoogleFonts.lato(fontSize: 20, fontWeight: FontWeight.bold),
+              Column(
+                children: [
+                  Text(
+                    'BNL-RMS',
+                    style: GoogleFonts.lato(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    'BNL REQUEST MANAGEMENT SYSTEM',
+                    style: GoogleFonts.lato(fontSize: 16),
+                  ),
+                ],
               ),
               SizedBox(
                 height: 15,

@@ -2,10 +2,9 @@ import 'package:bnl_task/services/models/komponen/KomponenModel.dart';
 import 'package:bnl_task/services/utils/apiService.dart';
 import 'package:bnl_task/utils/ReusableClasses.dart';
 import 'package:bnl_task/utils/warna.dart';
-import 'package:bnl_task/views/pages/tugas/timelinetugas.dart';
 import 'package:flutter/material.dart';
 
-class BottomTugas {
+class BottomProgress {
   ApiService _apiService = new ApiService();
   TextEditingController _tecNama = TextEditingController(text: "");
   TextEditingController _tecJumlah = TextEditingController(text: "");
@@ -40,37 +39,13 @@ class BottomTugas {
                       controller: _tecNama,
                       textCapitalization: TextCapitalization.characters,
                       decoration: InputDecoration(
-                          icon: Icon(Icons.date_range),
+                          icon: Icon(Icons.cabin_rounded),
                           labelText: 'Pilih Tanggal',
-                          hintText: '2020-02-20',
+                          hintText: '2021-01-01',
                           suffixIcon:
                               Icon(Icons.check_circle_outline_outlined))),
                   SizedBox(
                     height: 10.0,
-                  ),
-                  TextFormField(
-                      controller: _tecNama,
-                      textCapitalization: TextCapitalization.characters,
-                      decoration: InputDecoration(
-                          icon: Icon(Icons.date_range_rounded),
-                          labelText: 'Due Date',
-                          hintText: '2020-12-20',
-                          suffixIcon:
-                              Icon(Icons.check_circle_outline_outlined))),
-                  SizedBox(
-                    height: 10.0,
-                  ),
-                  TextFormField(
-                      controller: _tecJumlah,
-                      textCapitalization: TextCapitalization.words,
-                      decoration: InputDecoration(
-                          icon: Icon(Icons.category),
-                          labelText: 'Kategori',
-                          hintText: 'Masukkan Kategori',
-                          suffixIcon:
-                              Icon(Icons.check_circle_outline_outlined))),
-                  SizedBox(
-                    height: 15.0,
                   ),
                   TextFormField(
                       controller: _tecJumlah,
@@ -333,7 +308,7 @@ class BottomTugas {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text('DETAIL REQUEST',
+                  Text('DETAIL PROGRESS',
                       style:
                           TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
                   SizedBox(
@@ -345,7 +320,7 @@ class BottomTugas {
                   ),
                   Text('keterangan: ' + keterangan,
                       style: TextStyle(fontSize: 16)),
-                  Text('kategori: ' + kategori, style: TextStyle(fontSize: 16)),
+                  Text('user: ' + kategori, style: TextStyle(fontSize: 16)),
                   // Text(
                   //   'Nama : ' + nama + ' (' + jumlah + ')',
                   //   style: TextStyle(fontSize: 16),
@@ -421,7 +396,6 @@ class BottomTugas {
                   // ),
                   ElevatedButton(
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>TimelinePage()));
                         // modalAddSite(
                         //     context, 'ubah', token, nama, keterangan, idsite);
                       },
@@ -438,7 +412,7 @@ class BottomTugas {
                             width: 325,
                             height: 45,
                             alignment: Alignment.center,
-                            child: Text('TIMELINE REQUEST',
+                            child: Text('SELESAIKAN PROGRESS',
                                 style: TextStyle(
                                   color: primarycolor,
                                   fontSize: 18.0,

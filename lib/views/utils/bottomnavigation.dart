@@ -3,6 +3,7 @@ import 'package:bnl_task/utils/warna.dart';
 import 'package:bnl_task/views/pages/akun/akunpage.dart';
 import 'package:bnl_task/views/pages/dashboard/dasboardpage.dart';
 import 'package:bnl_task/views/pages/menu/menupage.dart';
+import 'package:bnl_task/views/pages/progress/progresspage.dart';
 import 'package:bnl_task/views/pages/tugas/tugaspage.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -39,7 +40,8 @@ class _BottomNavigationState extends State<BottomNavigation> {
   List<Widget> _currentPage = <Widget>[
     DashboardPage(),
     TugasPageSearch(),
-    MenuPage(),
+    // MenuPage(),
+    ProgressPageSearch(),
     AkunPage()
   ];
 

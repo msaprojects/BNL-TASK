@@ -49,7 +49,7 @@ class _AkunPageState extends State<AkunPage> {
                 padding: EdgeInsets.only(left: 20),
                 child: CircleAvatar(
                   backgroundColor: primarycolor,
-                  child: Image.asset('assets/images/icongajah.png'),
+                  child: Image.asset('assets/images/bnllogo.png'),
                 ),
               ),
               SizedBox(
@@ -57,7 +57,7 @@ class _AkunPageState extends State<AkunPage> {
               ),
               Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [Text(username!.toUpperCase()), Text(jabatan!)]),
+                  children: [Text("Admin BNL".toUpperCase()), Text("Admin")]),
             ],
           ),
           _option(),
@@ -134,7 +134,7 @@ class _AkunPageState extends State<AkunPage> {
                   SizedBox(
                     height: 20,
                   ),
-                  Text('Apakah anda mau keluar aplikasi CMMS?',
+                  Text('Apakah anda mau keluar aplikasi ?',
                       style: TextStyle(fontSize: 16)),
                   SizedBox(
                     height: 20,

@@ -4,42 +4,43 @@ import 'package:bnl_task/services/models/komponen/KomponenModel.dart';
 import 'package:bnl_task/utils/loadingview.dart';
 import 'package:bnl_task/utils/warna.dart';
 import 'package:bnl_task/views/pages/komponen/networkkomponen.dart';
-import 'package:bnl_task/views/pages/tugas/constantFilter.dart';
+import 'package:bnl_task/views/pages/progress/progresstile.dart';
 import 'package:bnl_task/views/pages/tugas/tugastile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class TugasPageSearch extends StatefulWidget {
+class ProgressPageSearch extends StatefulWidget {
   var kategori;
-  TugasPageSearch({this.kategori});
-
+  ProgressPageSearch({this.kategori});
+  
   @override
-  _TugasPageSearchState createState() => _TugasPageSearchState();
+  _ProgressPageSearchState createState() => _ProgressPageSearchState();
 }
 
-class _TugasPageSearchState extends State<TugasPageSearch> {
+class _ProgressPageSearchState extends State<ProgressPageSearch> {
+  final _formKey = GlobalKey<FormState>();
+  TextEditingController _tecNama = TextEditingController(text: "");
+  TextEditingController _tecJumlah = TextEditingController(text: "");
   late SharedPreferences sp;
   String? token = "", username = "", jabatan = "";
   List<KomponenModel> _komponents = <KomponenModel>[];
   List<KomponenModel> _komponentsDisplay = <KomponenModel>[];
   bool _isLoading = true;
   var tanggal, keterangan, kategori;
-  
-  List _itemsTugas = [];
-  final _formKey = GlobalKey<FormState>();
-  TextEditingController _tecNama = TextEditingController(text: "");
-  TextEditingController _tecJumlah = TextEditingController(text: "");
+
+  List _itemsProgress = [];
   // * initial function for dummy tugas terbaru
-  
   Future<void> tugasTerbaru() async {
     final String response =
-        await rootBundle.loadString('assets/json/tugas.json');
+        await rootBundle.loadString('assets/json/progress.json');
     final data = await json.decode(response);
     setState(() {
-      _itemsTugas = data["items"];
+      _itemsProgress = data["items"];
     });
   }
+
+  
 
   // * ceking token and getting dashboard value from Shared Preferences
   cekToken() async {
@@ -72,20 +73,7 @@ class _TugasPageSearchState extends State<TugasPageSearch> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Daftar Request'),
-        actions: [
-          PopupMenuButton<String>(
-              onSelected: filteraction,
-              itemBuilder: (BuildContext context) {
-                return FilterTugas.filter.map((String filter) {
-                  return PopupMenuItem<String>(
-                      value: filter, child: Text(filter));
-                }).toList();
-              })
-          // IconButton(
-
-          //   icon: Icon(Icons.more_vert, color: Colors.white,))
-        ],
+        title: Text('Daftar Progress'),
         centerTitle: true,
         backgroundColor: thirdcolor,
       ),
@@ -130,31 +118,7 @@ class _TugasPageSearchState extends State<TugasPageSearch> {
                               SizedBox(
                                 height: 10.0,
                               ),
-                              TextFormField(
-                                  controller: _tecNama,
-                                  textCapitalization:
-                                      TextCapitalization.characters,
-                                  decoration: InputDecoration(
-                                      icon: Icon(Icons.date_range_rounded),
-                                      labelText: 'Due Date',
-                                      hintText: '2020-12-20',
-                                      suffixIcon: Icon(
-                                          Icons.check_circle_outline_outlined))),
-                              SizedBox(
-                                height: 10.0,
-                              ),
-                              TextFormField(
-                                  controller: _tecJumlah,
-                                  textCapitalization: TextCapitalization.words,
-                                  decoration: InputDecoration(
-                                      icon: Icon(Icons.category),
-                                      labelText: 'Kategori',
-                                      hintText: 'Masukkan Kategori',
-                                      suffixIcon: Icon(
-                                          Icons.check_circle_outline_outlined))),
-                              SizedBox(
-                                height: 15.0,
-                              ),
+                             
                               TextFormField(
                                   controller: _tecJumlah,
                                   textCapitalization: TextCapitalization.words,
@@ -181,7 +145,7 @@ class _TugasPageSearchState extends State<TugasPageSearch> {
               });
         },
         label: Text(
-          'Tambah Request',
+          'Tambah Progress',
           style: TextStyle(color: Colors.white),
         ),
         backgroundColor: secondcolor,
@@ -198,10 +162,10 @@ class _TugasPageSearchState extends State<TugasPageSearch> {
               if (_isLoading) {
                 return index == 0
                     ? _searchBar()
-                    : TugasTile(
-                        tanggal: _itemsTugas[index]['tanggal'],
-                        keterangan: _itemsTugas[index]['keterangan'],
-                        kategori: _itemsTugas[index]['kategori']);
+                    : ProgressTile(
+                        user: _itemsProgress[index]['user'],
+                        keterangan: _itemsProgress[index]['keterangan'],
+                        tanggal: _itemsProgress[index]['tanggal']);
               } else {
                 return LoadingView();
               }
@@ -221,15 +185,11 @@ class _TugasPageSearchState extends State<TugasPageSearch> {
             //   return LoadingView();
             // }
             // itemCount: _komponentsDisplay.length + 1,
-            itemCount: _itemsTugas.length,
+            itemCount: _itemsProgress.length,
           ),
         ),
       ),
     );
-  }
-
-  void filteraction(String filter) {
-    print('object');
   }
 
   _searchBar() {
