@@ -1,4 +1,3 @@
-
 import 'package:bnl_task/utils/warna.dart';
 import 'package:bnl_task/views/pages/akun/akunpage.dart';
 import 'package:bnl_task/views/pages/dashboard/dasboardpage.dart';
@@ -14,21 +13,21 @@ class BottomNavigation extends StatefulWidget {
 }
 
 class _BottomNavigationState extends State<BottomNavigation> {
-  late SharedPreferences sp;
-  String? token = "", username = "", jabatan = "";
+  // late SharedPreferences sp;
+  // String? token = "", username = "", jabatan = "";
 // * ceking token and getting dashboard value from Shared Preferences
-  cekToken() async {
-    sp = await SharedPreferences.getInstance();
-    setState(() {
-      token = sp.getString("access_token")!;
-      username = sp.getString("username")!;
-      jabatan = sp.getString("jabatan")!;
-    });
-  }
+  // cekToken() async {
+  //   sp = await SharedPreferences.getInstance();
+  //   setState(() {
+  //     token = sp.getString("access_token")!;
+  //     username = sp.getString("username")!;
+  //     jabatan = sp.getString("jabatan")!;
+  //   });
+  // }
 
   @override
   void initState() {
-    cekToken();
+    // cekToken();
     super.initState();
   }
 
@@ -40,7 +39,6 @@ class _BottomNavigationState extends State<BottomNavigation> {
   List<Widget> _currentPage = <Widget>[
     DashboardPage(),
     TugasPageSearch(),
-    // MenuPage(),
     ProgressPageSearch(),
     AkunPage()
   ];

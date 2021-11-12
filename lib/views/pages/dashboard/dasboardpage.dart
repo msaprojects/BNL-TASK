@@ -191,12 +191,12 @@ class _DashboardPageState extends State<DashboardPage> {
         Align(
             alignment: Alignment.topLeft,
             child: Text(
-              "Tugas",
+              "Request",
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             )),
         Container(
           padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 24.0),
-          height: MediaQuery.of(context).size.height * 0.3,
+          height: MediaQuery.of(context).size.height * 0.25,
           child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: _itemsTugas.length,
@@ -261,14 +261,6 @@ class _DashboardPageState extends State<DashboardPage> {
                         ],
                       ),
                     ),
-                    // Card(
-                    //   color: whitecolor,
-                    //   child: Container(
-                    //     child: Center(
-                    //       child: Text(tasknew[index],),
-                    //     ),
-                    //   ),
-                    // ),
                   ),
                 );
               }),
@@ -291,7 +283,7 @@ class _DashboardPageState extends State<DashboardPage> {
             )),
         Container(
           padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 24.0),
-          height: MediaQuery.of(context).size.height * 0.3,
+          height: MediaQuery.of(context).size.height * 0.25,
           child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: _itemsProgress.length,
@@ -320,7 +312,7 @@ class _DashboardPageState extends State<DashboardPage> {
                           Align(
                             alignment: Alignment.topLeft,
                             child: Text(
-                              "User : "+_itemsProgress[index]["user"],
+                              "User : " + _itemsProgress[index]["user"],
                               style: GoogleFonts.lato(
                                   fontWeight: FontWeight.bold, fontSize: 16),
                             ),
@@ -364,12 +356,12 @@ class _DashboardPageState extends State<DashboardPage> {
         Align(
             alignment: Alignment.topLeft,
             child: Text(
-              "Tugas Selesai",
+              "Request Selesai",
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             )),
         Container(
           padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 24.0),
-          height: MediaQuery.of(context).size.height * 0.3,
+          height: MediaQuery.of(context).size.height * 0.25,
           child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: _itemsSelesai.length,
@@ -398,7 +390,7 @@ class _DashboardPageState extends State<DashboardPage> {
                           Align(
                             alignment: Alignment.topLeft,
                             child: Text(
-                              "User : "+_itemsSelesai[index]["user"],
+                              "User : " + _itemsSelesai[index]["user"],
                               style: GoogleFonts.lato(
                                   fontWeight: FontWeight.bold, fontSize: 16),
                             ),
@@ -473,7 +465,7 @@ class _DashboardPageState extends State<DashboardPage> {
                                     //         fontSize: 32,
                                     //         fontWeight: FontWeight.bold,
                                     //         color: Colors.blue)),
-                                    Text('TUGAS SELESAI'),
+                                    Text('REQUEST SELESAI'),
                                     Text("20",
                                         style: TextStyle(
                                             fontSize: 32,
@@ -534,7 +526,7 @@ class _DashboardPageState extends State<DashboardPage> {
                                 //         fontSize: 32,
                                 //         fontWeight: FontWeight.bold,
                                 //         color: Colors.red)),
-                                Text('JUMLAH TUGAS'),
+                                Text('JUMLAH REQUEST'),
                                 Text("65",
                                     style: TextStyle(
                                         fontSize: 32,

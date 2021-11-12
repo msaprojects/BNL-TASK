@@ -5,11 +5,12 @@ import 'package:bnl_task/views/pages/tugas/tugasbottom.dart';
 import 'package:flutter/material.dart';
 
 class TugasTile extends StatefulWidget {
-  var tanggal, keterangan, kategori;
+  var tanggal, keterangan, kategori, user;
   TugasTile(
       {required this.tanggal,
       required this.keterangan,
-      required this.kategori});
+      required this.kategori,
+      this.user});
   // final String token;
 
   @override
@@ -18,7 +19,7 @@ class TugasTile extends StatefulWidget {
 
 class _TugasTileState extends State<TugasTile> {
   late KomponenModel komponen;
-  var tanggal1, keterangan1, kategori1;
+  var tanggal1, keterangan1, kategori1, user;
   // List _itemsTugas = [];
 
   // Future<void> tugasTerbaru() async {
@@ -37,6 +38,7 @@ class _TugasTileState extends State<TugasTile> {
     tanggal1 = widget.tanggal;
     keterangan1 = widget.keterangan;
     kategori1 = widget.kategori;
+    user = widget.user;
     super.initState();
   }
 
@@ -49,11 +51,7 @@ class _TugasTileState extends State<TugasTile> {
             child: InkWell(
               onTap: () {
                 BottomTugas().modalActionItem(
-                  context, 
-                  tanggal1,
-                  keterangan1,
-                  kategori1,
-                  );
+                    context, tanggal1, keterangan1, kategori1, user);
                 // BottomTugas().modalActionItem(
                 //     context,
                 //     widget.token,
@@ -93,6 +91,11 @@ class _TugasTileState extends State<TugasTile> {
                       height: 5,
                     ),
                     Text('keterangan : ' + keterangan1.toString(),
+                        style: TextStyle(fontSize: 18.0)),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text('user : ' + user.toString(),
                         style: TextStyle(fontSize: 18.0)),
                   ],
                 ),

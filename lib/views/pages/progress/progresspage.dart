@@ -5,7 +5,6 @@ import 'package:bnl_task/utils/loadingview.dart';
 import 'package:bnl_task/utils/warna.dart';
 import 'package:bnl_task/views/pages/komponen/networkkomponen.dart';
 import 'package:bnl_task/views/pages/progress/progresstile.dart';
-import 'package:bnl_task/views/pages/tugas/tugastile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -13,7 +12,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class ProgressPageSearch extends StatefulWidget {
   var kategori;
   ProgressPageSearch({this.kategori});
-  
+
   @override
   _ProgressPageSearchState createState() => _ProgressPageSearchState();
 }
@@ -39,8 +38,6 @@ class _ProgressPageSearchState extends State<ProgressPageSearch> {
       _itemsProgress = data["items"];
     });
   }
-
-  
 
   // * ceking token and getting dashboard value from Shared Preferences
   cekToken() async {
@@ -76,83 +73,6 @@ class _ProgressPageSearchState extends State<ProgressPageSearch> {
         title: Text('Daftar Progress'),
         centerTitle: true,
         backgroundColor: thirdcolor,
-      ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {
-          showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return AlertDialog(
-                  content: SingleChildScrollView(
-                    child: Stack(
-                      overflow: Overflow.visible,
-                      children: <Widget>[
-                        Positioned(
-                          right: -40.0,
-                          top: -40.0,
-                          child: InkResponse(
-                            onTap: () {
-                              Navigator.of(context).pop();
-                            },
-                            child: CircleAvatar(
-                              child: Icon(Icons.close),
-                              backgroundColor: Colors.red,
-                            ),
-                          ),
-                        ),
-                        Form(
-                          key: _formKey,
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: <Widget>[
-                              TextFormField(
-                                  controller: _tecNama,
-                                  textCapitalization:
-                                      TextCapitalization.characters,
-                                  decoration: InputDecoration(
-                                      icon: Icon(Icons.date_range),
-                                      labelText: 'Pilih Tanggal',
-                                      hintText: '2020-02-20',
-                                      suffixIcon: Icon(
-                                          Icons.check_circle_outline_outlined))),
-                              SizedBox(
-                                height: 10.0,
-                              ),
-                             
-                              TextFormField(
-                                  controller: _tecJumlah,
-                                  textCapitalization: TextCapitalization.words,
-                                  decoration: InputDecoration(
-                                      icon: Icon(Icons.note_outlined),
-                                      labelText: 'Keterangan',
-                                      hintText: 'Masukkan Keterangan',
-                                      suffixIcon: Icon(
-                                          Icons.check_circle_outline_outlined))),
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: RaisedButton(
-                                  child: Text("Submit"),
-                                  onPressed: () {},
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                );
-              });
-        },
-        label: Text(
-          'Tambah Progress',
-          style: TextStyle(color: Colors.white),
-        ),
-        backgroundColor: secondcolor,
-        icon: Icon(
-          Icons.add_box_outlined,
-          color: Colors.white,
-        ),
       ),
       body: SafeArea(
         child: Container(
@@ -215,7 +135,7 @@ class _ProgressPageSearchState extends State<ProgressPageSearch> {
           fillColor: thirdcolor,
           border: OutlineInputBorder(),
           prefixIcon: Icon(Icons.search),
-          hintText: 'Cari Komponen',
+          hintText: 'Cari Progress',
         ),
       ),
     );

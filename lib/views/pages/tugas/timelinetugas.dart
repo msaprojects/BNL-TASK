@@ -34,6 +34,7 @@ class _TimelinePageState extends State<TimelinePage> {
       _itemsTimelineRequest = data["request"];
     });
   }
+
   Future<void> progressTimeline() async {
     final String response =
         await rootBundle.loadString('assets/json/timeline.json');
@@ -42,6 +43,7 @@ class _TimelinePageState extends State<TimelinePage> {
       _itemsTimelineProgress = data["progress"];
     });
   }
+
   Future<void> penyelesaianTimeline() async {
     final String response =
         await rootBundle.loadString('assets/json/timeline.json');
@@ -107,7 +109,8 @@ class _TimelinePageState extends State<TimelinePage> {
                                   padding: const EdgeInsets.all(12.0),
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         'Request',
@@ -135,14 +138,18 @@ class _TimelinePageState extends State<TimelinePage> {
                                           ],
                                         ),
                                       ),
-                                      Text('tanggal : ' +_itemsTimelineRequest[index]['tanggal'],)
+                                      Text(
+                                        'tanggal : ' +
+                                            _itemsTimelineRequest[index]
+                                                ['tanggal'],
+                                      )
                                     ],
                                   ),
                                 ),
                               ),
                             ),
-                          )),  
-                          Padding(
+                          )),
+                      Padding(
                           padding: const EdgeInsets.only(top: 10),
                           child: Container(
                             child: TimelineTile(
@@ -155,7 +162,8 @@ class _TimelinePageState extends State<TimelinePage> {
                                   padding: const EdgeInsets.all(12.0),
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         'Progress',
@@ -168,11 +176,14 @@ class _TimelinePageState extends State<TimelinePage> {
                                         height: 8,
                                       ),
                                       Row(
-                                        mainAxisAlignment: MainAxisAlignment.start,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
-                                          Text('tanggal : 2020-05-21'),
+                                          Text('tanggal : ' +
+                                              _itemsTimelineProgress[index]
+                                                  ['tanggal']),
                                         ],
                                       ),
                                       Expanded(
@@ -182,7 +193,122 @@ class _TimelinePageState extends State<TimelinePage> {
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           children: [
-                                            Text('Keterangan : Deadline untuk peresmian'),
+                                            Text('Keterangan : ' +
+                                                _itemsTimelineProgress[index]
+                                                    ['keterangan']),
+                                          ],
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text('Pengguna : ' +
+                                                _itemsTimelineProgress[index]
+                                                    ['user']),
+                                          ],
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      Text(
+                                        'Progress',
+                                        style: TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      Divider(
+                                        thickness: 2,
+                                        height: 8,
+                                      ),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text('tanggal : ' +
+                                              _itemsTimelineProgress[1]
+                                                  ['tanggal']),
+                                        ],
+                                      ),
+                                      Expanded(
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text('Keterangan : ' +
+                                                _itemsTimelineProgress[1]
+                                                    ['keterangan']),
+                                          ],
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text('Pengguna : ' +
+                                                _itemsTimelineProgress[1]
+                                                    ['user']),
+                                          ],
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      Text(
+                                        'Progress',
+                                        style: TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      Divider(
+                                        thickness: 2,
+                                        height: 8,
+                                      ),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text('tanggal : ' +
+                                              _itemsTimelineProgress[2]
+                                                  ['tanggal']),
+                                        ],
+                                      ),
+                                      Expanded(
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text('Keterangan : ' +
+                                                _itemsTimelineProgress[2]
+                                                    ['keterangan']),
+                                          ],
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text('Pengguna : ' +
+                                                _itemsTimelineProgress[2]
+                                                    ['user']),
                                           ],
                                         ),
                                       ),
@@ -191,8 +317,8 @@ class _TimelinePageState extends State<TimelinePage> {
                                 ),
                               ),
                             ),
-                          )),   
-                          Padding(
+                          )),
+                      Padding(
                           padding: const EdgeInsets.only(top: 10),
                           child: Container(
                             child: TimelineTile(
@@ -205,7 +331,8 @@ class _TimelinePageState extends State<TimelinePage> {
                                   padding: const EdgeInsets.all(12.0),
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         'Penyelesaian',
@@ -218,7 +345,8 @@ class _TimelinePageState extends State<TimelinePage> {
                                         height: 8,
                                       ),
                                       Row(
-                                        mainAxisAlignment: MainAxisAlignment.start,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
@@ -232,7 +360,8 @@ class _TimelinePageState extends State<TimelinePage> {
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           children: [
-                                            Text('Keterangan : Deadline untuk peresmian'),
+                                            Text(
+                                                'Keterangan : Deadline untuk peresmian'),
                                           ],
                                         ),
                                       ),
@@ -252,14 +381,14 @@ class _TimelinePageState extends State<TimelinePage> {
                                 ),
                               ),
                             ),
-                          )),            
+                          )),
                     ],
                   );
                 }),
           ),
         ));
   }
-  
+
   // ++ DESIGN LIST COMPONENT
   // Widget _listKomponen(List<TimelineModel>? dataIndex) {
   //   return ListView.builder(

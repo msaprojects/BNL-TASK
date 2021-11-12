@@ -305,7 +305,8 @@ class BottomTugas {
   }
 
   // ++ BOTTOM MODAL ACTION ITEM
-  void modalActionItem(context, var tanggal, var keterangan, var kategori
+  void modalActionItem(
+      context, var tanggal, var keterangan, var kategori, String user
       // String token,
       // String nama,
       // String nomesin,
@@ -346,6 +347,7 @@ class BottomTugas {
                   Text('keterangan: ' + keterangan,
                       style: TextStyle(fontSize: 16)),
                   Text('kategori: ' + kategori, style: TextStyle(fontSize: 16)),
+                  Text('pengguna: ' + user, style: TextStyle(fontSize: 16)),
                   // Text(
                   //   'Nama : ' + nama + ' (' + jumlah + ')',
                   //   style: TextStyle(fontSize: 16),
@@ -360,7 +362,7 @@ class BottomTugas {
                     thickness: 1.0,
                   ),
                   SizedBox(
-                    height: 20,
+                    height: 5,
                   ),
                   ElevatedButton(
                       onPressed: () {
@@ -389,39 +391,73 @@ class BottomTugas {
                                 )),
                           ))),
                   SizedBox(
-                    height: 10,
+                    height: 5,
                   ),
-                  // ElevatedButton(
-                  //     onPressed: () {
-                  //       // _modalKonfirmasi(context, token, 'hapus', idkomponen,
-                  //       //     nama, jumlah, idmesin);
-                  //     },
-                  //     style: ElevatedButton.styleFrom(
-                  //         side: BorderSide(width: 2, color: Colors.red),
-                  //         elevation: 0.0,
-                  //         shape: RoundedRectangleBorder(
-                  //             borderRadius: BorderRadius.circular(8)),
-                  //         primary: Colors.white),
-                  //     child: Ink(
-                  //         decoration: BoxDecoration(
-                  //             borderRadius: BorderRadius.circular(18.0)),
-                  //         child: Container(
-                  //           width: 325,
-                  //           height: 45,
-                  //           alignment: Alignment.center,
-                  //           child: Text('HAPUS REQUEST',
-                  //               style: TextStyle(
-                  //                 color: Colors.red,
-                  //                 fontSize: 18.0,
-                  //                 fontWeight: FontWeight.bold,
-                  //               )),
-                  //         ))),
-                  // SizedBox(
-                  //   height: 10,
-                  // ),
                   ElevatedButton(
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (BuildContext context)=>TimelinePage()));
+                        //   modalAddSite(
+                        //       context, 'ubah', tanggal, keterangan, kategori);
+                        //   // context, 'ubah', token, idkomponen, idmesin);
+                      },
+                      style: ElevatedButton.styleFrom(
+                          side: BorderSide(width: 2, color: Colors.blue),
+                          elevation: 0.0,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8)),
+                          primary: Colors.white),
+                      child: Ink(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(18.0)),
+                          child: Container(
+                            width: 325,
+                            height: 45,
+                            alignment: Alignment.center,
+                            child: Text('BUAT PROGRESS',
+                                style: TextStyle(
+                                  color: Colors.blue,
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.bold,
+                                )),
+                          ))),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  ElevatedButton(
+                      onPressed: () {
+                        modalAddSite(
+                            context, 'ubah', tanggal, keterangan, kategori);
+                        // context, 'ubah', token, idkomponen, idmesin);
+                      },
+                      style: ElevatedButton.styleFrom(
+                          side: BorderSide(width: 2, color: Colors.red),
+                          elevation: 0.0,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8)),
+                          primary: Colors.white),
+                      child: Ink(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(18.0)),
+                          child: Container(
+                            width: 325,
+                            height: 45,
+                            alignment: Alignment.center,
+                            child: Text('SET SELESAI',
+                                style: TextStyle(
+                                  color: Colors.red,
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.bold,
+                                )),
+                          ))),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (BuildContext context) =>
+                                    TimelinePage()));
                         // modalAddSite(
                         //     context, 'ubah', token, nama, keterangan, idsite);
                       },

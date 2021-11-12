@@ -6,35 +6,28 @@
         "keterangan": "Deadline untuk peresmian",
         "due_date": "2021-12-12",
         "kategori": "Merk"
-      },
-      {
-        "id": "2",
-        "tanggal": "2021-12-21",
-        "keterangan": "Deadline untuk peresmian jalan tol",
-        "due_date": "2021-12-11",
-        "kategori": "Paten"
-      },
-      {
-        "id": "3",
-        "tanggal": "2021-11-19",
-        "keterangan": "Deadline untuk peresmian proyek pertamina",
-        "due_date": "2021-12-10",
-        "kategori": "Desain Industri"
-      }    
+      }
     ],
     "progress": [
         {
           "id": "1",
           "tanggal": "2020-05-21",
           "user": "Juned",
-          "keterangan": "Deadline untuk peresmian",
+          "keterangan": "Deadline untuk peresmian 1",
           "waktuselesai": "2020-09-10"
         },
         {
           "id": "2",
           "tanggal": "2020-05-21",
-          "user": "Juned",
-          "keterangan": "Deadline untuk peresmian",
+          "user": "syahrul",
+          "keterangan": "Deadline untuk peresmian 2",
+          "waktuselesai": "2020-10-10"
+        },
+        {
+          "id": "2",
+          "tanggal": "2020-05-21",
+          "user": "fadil",
+          "keterangan": "Deadline untuk peresmian 3",
           "waktuselesai": "2020-10-10"
         }
       ],

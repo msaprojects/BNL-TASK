@@ -5,35 +5,40 @@
       "tanggal": "2020-05-21",
       "keterangan": "Deadline untuk peresmian",
       "due_date": "2021-12-12",
-      "kategori": "Merk"
+      "kategori": "Merk",
+      "user": "Admin 1"
     },
     {
       "id": "2",
       "tanggal": "2021-12-21",
       "keterangan": "Deadline untuk peresmian jalan tol",
       "due_date": "2021-12-11",
-      "kategori": "Paten"
+      "kategori": "Paten",
+      "user": "Admin 2"
     },
     {
       "id": "3",
       "tanggal": "2021-11-19",
       "keterangan": "Deadline untuk peresmian proyek pertamina",
       "due_date": "2021-12-10",
-      "kategori": "Desain Industri"
+      "kategori": "Desain Industri",
+      "user": "Admin 3"
     },
     {
       "id": "4",
       "tanggal": "2021-11-19",
       "keterangan": "Deadline untuk peresmian proyek pertamina",
       "due_date": "2021-12-10",
-      "kategori": "Hak Cipta"
+      "kategori": "Hak Cipta",
+      "user": "Admin 2"
     },
     {
       "id": "5",
       "tanggal": "2021-11-19",
       "keterangan": "Deadline untuk peresmian proyek pertamina",
       "due_date": "2021-12-10",
-      "kategori": "Merk"
+      "kategori": "Merk",
+      "user": "Admin 1"
     }
   ]
 }

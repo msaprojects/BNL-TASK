@@ -25,13 +25,13 @@ class _TugasPageSearchState extends State<TugasPageSearch> {
   List<KomponenModel> _komponentsDisplay = <KomponenModel>[];
   bool _isLoading = true;
   var tanggal, keterangan, kategori;
-  
+
   List _itemsTugas = [];
   final _formKey = GlobalKey<FormState>();
   TextEditingController _tecNama = TextEditingController(text: "");
   TextEditingController _tecJumlah = TextEditingController(text: "");
   // * initial function for dummy tugas terbaru
-  
+
   Future<void> tugasTerbaru() async {
     final String response =
         await rootBundle.loadString('assets/json/tugas.json');
@@ -125,8 +125,8 @@ class _TugasPageSearchState extends State<TugasPageSearch> {
                                       icon: Icon(Icons.date_range),
                                       labelText: 'Pilih Tanggal',
                                       hintText: '2020-02-20',
-                                      suffixIcon: Icon(
-                                          Icons.check_circle_outline_outlined))),
+                                      suffixIcon: Icon(Icons
+                                          .check_circle_outline_outlined))),
                               SizedBox(
                                 height: 10.0,
                               ),
@@ -138,8 +138,8 @@ class _TugasPageSearchState extends State<TugasPageSearch> {
                                       icon: Icon(Icons.date_range_rounded),
                                       labelText: 'Due Date',
                                       hintText: '2020-12-20',
-                                      suffixIcon: Icon(
-                                          Icons.check_circle_outline_outlined))),
+                                      suffixIcon: Icon(Icons
+                                          .check_circle_outline_outlined))),
                               SizedBox(
                                 height: 10.0,
                               ),
@@ -150,8 +150,8 @@ class _TugasPageSearchState extends State<TugasPageSearch> {
                                       icon: Icon(Icons.category),
                                       labelText: 'Kategori',
                                       hintText: 'Masukkan Kategori',
-                                      suffixIcon: Icon(
-                                          Icons.check_circle_outline_outlined))),
+                                      suffixIcon: Icon(Icons
+                                          .check_circle_outline_outlined))),
                               SizedBox(
                                 height: 15.0,
                               ),
@@ -162,8 +162,8 @@ class _TugasPageSearchState extends State<TugasPageSearch> {
                                       icon: Icon(Icons.note_outlined),
                                       labelText: 'Keterangan',
                                       hintText: 'Masukkan Keterangan',
-                                      suffixIcon: Icon(
-                                          Icons.check_circle_outline_outlined))),
+                                      suffixIcon: Icon(Icons
+                                          .check_circle_outline_outlined))),
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: RaisedButton(
@@ -201,7 +201,8 @@ class _TugasPageSearchState extends State<TugasPageSearch> {
                     : TugasTile(
                         tanggal: _itemsTugas[index]['tanggal'],
                         keterangan: _itemsTugas[index]['keterangan'],
-                        kategori: _itemsTugas[index]['kategori']);
+                        kategori: _itemsTugas[index]['kategori'],
+                        user: _itemsTugas[index]['user']);
               } else {
                 return LoadingView();
               }
@@ -255,7 +256,7 @@ class _TugasPageSearchState extends State<TugasPageSearch> {
           fillColor: thirdcolor,
           border: OutlineInputBorder(),
           prefixIcon: Icon(Icons.search),
-          hintText: 'Cari Komponen',
+          hintText: 'Cari Request',
         ),
       ),
     );
